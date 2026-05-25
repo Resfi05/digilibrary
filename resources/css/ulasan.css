@@ -1,0 +1,351 @@
+/* ===== ULASAN LAYOUT ===== */
+.ulasan-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.ulasan-main {
+    min-width: 0;
+}
+
+.ulasan-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ulasan-header h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.ulasan-header p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.uh-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ul-count {
+    font-size: 0.78rem;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.ul-sort {
+    padding: 8px 12px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.82rem;
+    color: #374151;
+    background: white;
+    cursor: pointer;
+    outline: none;
+}
+
+/* LIST */
+.ulasan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ulasan-item {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 64px 160px 1fr auto;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+    transition: all 0.25s;
+}
+
+.ulasan-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-color: #e0e7ff;
+}
+
+/* Cover */
+.ul-cover {
+    width: 64px;
+    height: 80px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.ul-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Book info */
+.ul-book-info {
+    min-width: 0;
+}
+.ul-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.3;
+}
+.ul-author {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+.ul-cat {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+/* Review content */
+.ul-review-content {
+    min-width: 0;
+}
+
+.ul-review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.ul-review-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #374151;
+}
+.ul-review-date {
+    font-size: 0.72rem;
+    color: #9ca3af;
+}
+
+.ul-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+.us-on {
+    color: #f59e0b;
+    font-size: 1.1rem;
+}
+.us-off {
+    color: #e5e7eb;
+    font-size: 1.1rem;
+}
+
+.ul-komentar {
+    font-size: 0.82rem;
+    color: #374151;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Actions */
+.ul-actions {
+    flex-shrink: 0;
+}
+
+.ul-menu-wrap {
+    position: relative;
+}
+
+.ul-menu-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1.5px solid #e5e7eb;
+    background: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.ul-menu-btn:hover {
+    border-color: #1a56db;
+    color: #1a56db;
+    background: #eff6ff;
+}
+
+.ul-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    min-width: 130px;
+    overflow: hidden;
+    display: none;
+    z-index: 100;
+}
+
+.ul-dropdown.show {
+    display: block;
+    animation: fadeInUp 0.15s ease;
+}
+
+.ul-dropdown button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+}
+
+.ul-dropdown button:hover {
+    background: #f9fafb;
+}
+.ud-hapus {
+    color: #dc2626 !important;
+}
+.ud-hapus:hover {
+    background: #fef2f2 !important;
+}
+
+/* PANEL KANAN */
+.ulasan-right {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+/* Tips */
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tip-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.tip-text {
+    font-size: 0.8rem;
+    color: #374151;
+    line-height: 1.5;
+}
+
+/* Last review */
+.last-review-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 10px;
+}
+
+.lrc-cover {
+    width: 44px;
+    height: 56px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.lrc-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .ulasan-layout {
+        grid-template-columns: 1fr;
+    }
+    .ulasan-right {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    .ulasan-right .dr-card {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .ulasan-item {
+        grid-template-columns: 56px 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .ul-review-content {
+        grid-column: 1 / -1;
+    }
+    .ul-actions {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+    .ulasan-right {
+        grid-template-columns: 1fr;
+    }
+}

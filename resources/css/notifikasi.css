@@ -1,0 +1,340 @@
+/* ===== NOTIFIKASI LAYOUT ===== */
+.notif-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.notif-main {
+    min-width: 0;
+}
+
+.notif-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.notif-header h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 4px;
+}
+.notif-header p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.notif-baca-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #1a56db;
+    background: white;
+    color: #1a56db;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.notif-baca-btn:hover {
+    background: #1a56db;
+    color: white;
+}
+
+/* TABS */
+.notif-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid #f3f4f6;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.notif-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.nt-tab {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nt-tab:hover {
+    color: #1a56db;
+}
+.nt-active {
+    color: #1a56db;
+    border-bottom-color: #1a56db;
+}
+
+.nt-count {
+    background: #1a56db;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 99px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.nt-active .nt-count {
+    background: #1a56db;
+}
+
+/* GROUP */
+.notif-group {
+    margin-bottom: 20px;
+}
+
+.ng-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    padding: 0 4px;
+}
+
+.notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ITEM */
+.notif-item {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: 1px solid #f3f4f6;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.notif-item:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    border-color: #e0e7ff;
+    transform: translateX(2px);
+}
+
+.notif-unread-item {
+    background: #f8faff;
+    border-color: #c7d7fb;
+}
+
+.ni-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1a56db;
+    flex-shrink: 0;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+}
+
+.ni-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.ni-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.ni-msg {
+    font-size: 0.875rem;
+    color: #111827;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.notif-unread-item .ni-msg {
+    font-weight: 600;
+}
+
+.ni-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.ni-tipe {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 99px;
+}
+
+.ni-time {
+    font-size: 0.72rem;
+    color: #9ca3af;
+}
+
+.ni-arrow {
+    color: #d1d5db;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.notif-item:hover .ni-arrow {
+    color: #1a56db;
+    transform: translateX(2px);
+}
+
+/* PANEL KANAN */
+.notif-right {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+/* Ringkasan */
+.notif-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ns-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+}
+
+.ns-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.ns-label {
+    flex: 1;
+    font-size: 0.8rem;
+    color: #374151;
+}
+.ns-val {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.ns-divider {
+    height: 1px;
+    background: #f3f4f6;
+    margin: 4px 0;
+}
+.ns-total .ns-label {
+    font-size: 0.85rem;
+}
+.ns-total .ns-val {
+    font-size: 1rem;
+}
+
+/* Pengaturan */
+.notif-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nset-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.nset-item:hover {
+    background: #f9fafb;
+}
+.nset-icon {
+    font-size: 1rem;
+    width: 24px;
+    text-align: center;
+}
+.nset-label {
+    flex: 1;
+    font-size: 0.82rem;
+    color: #374151;
+    font-weight: 500;
+}
+.nset-arrow {
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .notif-layout {
+        grid-template-columns: 1fr;
+    }
+    .notif-right {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    .notif-right .dr-card {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .notif-right {
+        grid-template-columns: 1fr;
+    }
+    .notif-header {
+        flex-direction: column;
+    }
+    .notif-item {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,46 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: digilibrary_app
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: digilibrary
+      DB_USERNAME: root
+      DB_PASSWORD: secret
+    command: sh -c "chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache ; apache2-foreground"
+
+  db:
+    image: mysql:8.0
+    container_name: digilibrary_db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: digilibrary
+    volumes:
+      - digilibrary_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: digilibrary_pma
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    depends_on:
+      - db
+
+volumes:
+  digilibrary_data:
