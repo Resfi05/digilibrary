@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminPeminjamanController;
 use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\AdminLaporanController;
+use App\Http\Controllers\Admin\AdminDendaController;
+use App\Http\Controllers\Admin\AdminNotifikasiController;
 use App\Http\Controllers\Petugas\PetugasDashboardController;
 use App\Http\Controllers\Petugas\PetugasBukuController;
 use App\Http\Controllers\Petugas\PetugasPeminjamanController;
@@ -113,6 +115,15 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin'])->grou
     Route::put('petugas-list/{id}', [AdminUserController::class, 'petugasUpdate'])->name('petugas.list.update');
     Route::put('petugas-list/{id}/toggle', [AdminUserController::class, 'petugasToggle'])->name('petugas.list.toggle');
     Route::delete('petugas-list/{id}', [AdminUserController::class, 'petugasDestroy'])->name('petugas.list.destroy');
+
+    Route::get('denda', [AdminDendaController::class, 'index'])->name('denda.index');
+    Route::put('denda/{id}/bayar', [AdminDendaController::class, 'bayar'])->name('denda.bayar');
+
+    // Notifikasi
+    Route::get('notifikasi', [AdminNotifikasiController::class, 'index'])->name('notifikasi.index');
+    Route::post('notifikasi/kirim', [AdminNotifikasiController::class, 'kirim'])->name('notifikasi.kirim');
+    Route::delete('notifikasi/{id}', [AdminNotifikasiController::class, 'destroy'])->name('notifikasi.destroy');
+    Route::post('notifikasi/hapus-semua', [AdminNotifikasiController::class, 'hapusSemua'])->name('notifikasi.hapus-semua');
 });
 
 // ==========================================
